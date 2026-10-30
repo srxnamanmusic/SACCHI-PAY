@@ -1,0 +1,21 @@
+
+{
+  "name": "sacchi-pay",
+  "version": "1.0.0",
+  "description": "Sacchi Pay - Payment system demo for Sacchi Flyier",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [
+    "sacchi-pay",
+    "sacchi-flyier",
+    "payment-demo"
+  ],
+  "author": "Sacchi Flyier",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
