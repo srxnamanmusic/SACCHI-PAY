@@ -1,1 +1,47 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sacchi Pay | Secure Checkout Demo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>SACCHI PAY</h1>
+    <p>Payment experience by Sacchi Flyier</p>
+  </header>
+
+  <main>
+    <section class="checkout">
+      <h2>Checkout</h2>
+      <p>Demo payment page — no real money is collected.</p>
+
+      <label for="amount">Order amount</label>
+      <input id="amount" type="number" min="1" step="0.01" value="50">
+
+      <label for="currency">Currency</label>
+      <select id="currency">
+        <option value="USD">USD ($)</option>
+        <option value="INR">INR (₹)</option>
+        <option value="EUR">EUR (€)</option>
+        <option value="GBP">GBP (£)</option>
+      </select>
+
+      <label for="method">Payment method (simulation)</label>
+      <select id="method">
+        <option value="card">Card</option>
+        <option value="upi">UPI</option>
+        <option value="netbanking">Net Banking</option>
+      </select>
+
+      <button id="payButton">Simulate Payment</button>
+      <p id="message" role="status"></p>
+    </section>
+  </main>
+
+  <footer>© 2026 Sacchi Pay · Demo only</footer>
+  <script src="app.js"></script>
+</body>
+</html>
