@@ -1,1 +1,140 @@
+const countries = [
+  ["Afghanistan", "AF", "AFN"],
+  ["Albania", "AL", "ALL"],
+  ["Algeria", "DZ", "DZD"],
+  ["Andorra", "AD", "EUR"],
+  ["Angola", "AO", "AOA"],
+  ["Antigua and Barbuda", "AG", "XCD"],
+  ["Argentina", "AR", "ARS"],
+  ["Armenia", "AM", "AMD"],
+  ["Australia", "AU", "AUD"],
+  ["Austria", "AT", "EUR"],
+  ["Azerbaijan", "AZ", "AZN"],
+  ["Bahamas", "BS", "BSD"],
+  ["Bahrain", "BH", "BHD"],
+  ["Bangladesh", "BD", "BDT"],
+  ["Barbados", "BB", "BBD"],
+  ["Belarus", "BY", "BYN"],
+  ["Belgium", "BE", "EUR"],
+  ["Belize", "BZ", "BZD"],
+  ["Benin", "BJ", "XOF"],
+  ["Bhutan", "BT", "BTN"],
+  ["Bolivia", "BO", "BOB"],
+  ["Bosnia and Herzegovina", "BA", "BAM"],
+  ["Botswana", "BW", "BWP"],
+  ["Brazil", "BR", "BRL"],
+  ["Brunei", "BN", "BND"],
+  ["Bulgaria", "BG", "EUR"],
+  ["Cambodia", "KH", "KHR"],
+  ["Cameroon", "CM", "XAF"],
+  ["Canada", "CA", "CAD"],
+  ["Chile", "CL", "CLP"],
+  ["China", "CN", "CNY"],
+  ["Colombia", "CO", "COP"],
+  ["Costa Rica", "CR", "CRC"],
+  ["Croatia", "HR", "EUR"],
+  ["Cyprus", "CY", "EUR"],
+  ["Czechia", "CZ", "CZK"],
+  ["Denmark", "DK", "DKK"],
+  ["Dominican Republic", "DO", "DOP"],
+  ["Ecuador", "EC", "USD"],
+  ["Egypt", "EG", "EGP"],
+  ["Estonia", "EE", "EUR"],
+  ["Ethiopia", "ET", "ETB"],
+  ["Finland", "FI", "EUR"],
+  ["France", "FR", "EUR"],
+  ["Georgia", "GE", "GEL"],
+  ["Germany", "DE", "EUR"],
+  ["Ghana", "GH", "GHS"],
+  ["Greece", "GR", "EUR"],
+  ["Guatemala", "GT", "GTQ"],
+  ["Hong Kong", "HK", "HKD"],
+  ["Hungary", "HU", "HUF"],
+  ["Iceland", "IS", "ISK"],
+  ["India", "IN", "INR"],
+  ["Indonesia", "ID", "IDR"],
+  ["Iraq", "IQ", "IQD"],
+  ["Ireland", "IE", "EUR"],
+  ["Israel", "IL", "ILS"],
+  ["Italy", "IT", "EUR"],
+  ["Jamaica", "JM", "JMD"],
+  ["Japan", "JP", "JPY"],
+  ["Jordan", "JO", "JOD"],
+  ["Kazakhstan", "KZ", "KZT"],
+  ["Kenya", "KE", "KES"],
+  ["Kuwait", "KW", "KWD"],
+  ["Latvia", "LV", "EUR"],
+  ["Lebanon", "LB", "LBP"],
+  ["Lithuania", "LT", "EUR"],
+  ["Luxembourg", "LU", "EUR"],
+  ["Malaysia", "MY", "MYR"],
+  ["Maldives", "MV", "MVR"],
+  ["Malta", "MT", "EUR"],
+  ["Mexico", "MX", "MXN"],
+  ["Monaco", "MC", "EUR"],
+  ["Mongolia", "MN", "MNT"],
+  ["Morocco", "MA", "MAD"],
+  ["Nepal", "NP", "NPR"],
+  ["Netherlands", "NL", "EUR"],
+  ["New Zealand", "NZ", "NZD"],
+  ["Nigeria", "NG", "NGN"],
+  ["Norway", "NO", "NOK"],
+  ["Oman", "OM", "OMR"],
+  ["Pakistan", "PK", "PKR"],
+  ["Panama", "PA", "USD"],
+  ["Peru", "PE", "PEN"],
+  ["Philippines", "PH", "PHP"],
+  ["Poland", "PL", "PLN"],
+  ["Portugal", "PT", "EUR"],
+  ["Qatar", "QA", "QAR"],
+  ["Romania", "RO", "RON"],
+  ["Russia", "RU", "RUB"],
+  ["Saudi Arabia", "SA", "SAR"],
+  ["Serbia", "RS", "RSD"],
+  ["Singapore", "SG", "SGD"],
+  ["Slovakia", "SK", "EUR"],
+  ["Slovenia", "SI", "EUR"],
+  ["South Africa", "ZA", "ZAR"],
+  ["South Korea", "KR", "KRW"],
+  ["Spain", "ES", "EUR"],
+  ["Sri Lanka", "LK", "LKR"],
+  ["Sweden", "SE", "SEK"],
+  ["Switzerland", "CH", "CHF"],
+  ["Taiwan", "TW", "TWD"],
+  ["Thailand", "TH", "THB"],
+  ["Turkey", "TR", "TRY"],
+  ["Ukraine", "UA", "UAH"],
+  ["United Arab Emirates", "AE", "AED"],
+  ["United Kingdom", "GB", "GBP"],
+  ["United States", "US", "USD"],
+  ["Uruguay", "UY", "UYU"],
+  ["Uzbekistan", "UZ", "UZS"],
+  ["Venezuela", "VE", "VES"],
+  ["Vietnam", "VN", "VND"],
+  ["Zambia", "ZM", "ZMW"],
+  ["Zimbabwe", "ZW", "ZWG"]
+];
 
+const countrySelect = document.getElementById("country");
+const currencySelect = document.getElementById("currency");
+
+if (countrySelect) {
+  countries.forEach(([name, code, currency]) => {
+    const option = document.createElement("option");
+    option.value = code;
+    option.textContent = name;
+    option.dataset.currency = currency;
+    countrySelect.appendChild(option);
+  });
+}
+
+if (countrySelect && currencySelect) {
+  countrySelect.addEventListener("change", () => {
+    const selected =
+      countrySelect.options[countrySelect.selectedIndex];
+
+    if (selected.dataset.currency) {
+      currencySelect.value = selected.dataset.currency;
+    }
+  });
+   }
